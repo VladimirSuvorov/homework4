@@ -9,6 +9,7 @@ addons:
       - g++-8
       - libgtest-dev
 #      - libboost-all-dev
+      - doxygen
       - build-essential
       - cmake
 before_install:
