@@ -31,12 +31,12 @@ include_directories(
 
 #Targets
 add_executable(print_ip Source.cpp)
-#add_executable(homework_test totalTest.cpp)
+add_executable(homework_test tests.cpp)
 
 
 
 #Compilation setings
-set_target_properties(print_ip 
+set_target_properties(print_ip homework_test
 PROPERTIES
     CXX_STANDARD 17
     CXX_STANDARD_REQUIRED ON
@@ -44,10 +44,10 @@ PROPERTIES
 #    INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIR}
 )
 
-#set_target_properties(homework_test
-#PROPERTIES
-#    INCLUDE_DIRECTORIES ${GTEST_INCLUDE_DIR}
-#)
+set_target_properties(homework_test
+PROPERTIES
+    INCLUDE_DIRECTORIES ${GTEST_INCLUDE_DIR}
+)
 
 
 #Linking
@@ -56,10 +56,10 @@ PROPERTIES
 #)
 
 
-#target_link_libraries(homework_test
-#    ${GTEST_LIBRARIES}
-#    Threads::Threads
-#)
+target_link_libraries(homework_test
+    ${GTEST_LIBRARIES}
+    Threads::Threads
+)
 
 #Install
 install(TARGETS print_ip RUNTIME DESTINATION bin)
@@ -89,4 +89,4 @@ include(CPack)
 
 #Testing
 enable_testing()
-#add_test(homework_test homework_test)
+add_test(homework_test homework_test)
