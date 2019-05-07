@@ -27,12 +27,12 @@ script:
 - cmake --build . --target package -- -j "`nproc`"
 - doxygen
 deploy:
-    provider: script
+  - provider: script
     skip_cleanup: true
     #debug: on
     script: 
     - curl -T print_ip-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -uvladimirsuvorov:$BINTRAY_API_KEY "https://api.bintray.com/content/vladimirsuvorov/otus-cpp/print_ip/$TRAVIS_BUILD_NUMBER/print_ip-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=xenial;deb_component=main;deb_architecture=amd64;publish=1"
-    - provider: pages
+  - provider: pages
     local-dir: html
     skip_cleanup: true
     github-token: "$Doxygen_tocken"
