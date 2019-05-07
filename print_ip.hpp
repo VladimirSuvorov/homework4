@@ -1,4 +1,5 @@
 #ifndef PRINT_IP_PROJECT_PRINT_IP_HPP
+#include <iterator>
 #include <iostream>
 #include <new>
 #include <cstddef>
@@ -71,8 +72,7 @@ namespace print_ip_ns {
 			constexpr static Ostream& print(Ostream& out, U&& v) {
 				using namespace std;
 				auto from = cbegin(v);
-				auto to = (cend(v)-1);
-				for (; from != to; ++from)
+				for (; from != prev(cend(v)); ++from)
 					print_ip_ns::print_ip(out, *from) << '.';
 				return print_ip_ns::print_ip(out, *from);
 			}
