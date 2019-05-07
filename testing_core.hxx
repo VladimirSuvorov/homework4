@@ -1,5 +1,6 @@
 #ifndef PRINT_IP_PROJECT_TESTS_HXX
 #include <sstream>
+#include <gtest/gtest.h>
 #include "print_ip.hpp"
 #include "global_constants.hpp"
 #define PRINT_IP_PROJECT_TESTS_HXX
@@ -40,6 +41,12 @@ DEFINE_OUTPUT_CORRECTNESS_CHECK_FUNCTION_FOR_TYPE(const_std_list_uint8_t)
 DEFINE_OUTPUT_CORRECTNESS_CHECK_FUNCTION_FOR_TYPE(const_tuple)
 #undef DEFINE_OUTPUT_CORRECTNESS_CHECK_FUNCTION
 
+
+int main(int argc, char *argv[])
+{
+	::testing::InitGoogleTest(&argc, argv);
+	return RUN_ALL_TESTS();
+}
 
 
 #endif
