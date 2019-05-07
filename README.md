@@ -4,4 +4,3 @@
 https://travis-ci.org/VladimirSuvorov/homework4/builds
 
 https://bintray.com/vladimirsuvorov/otus-cpp/print_ip
-
