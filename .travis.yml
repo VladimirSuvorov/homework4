@@ -35,7 +35,7 @@ deploy:
     - provider: pages
     local-dir: html
     skip_cleanup: true
-    github-token: "$GITHUB_TOKEN"
+    github-token: "$Doxygen_tocken"
     keep_history: false
     verbose: true
     on:
