@@ -71,7 +71,8 @@ namespace print_ip_ns {
 			constexpr static Ostream& print(Ostream& out, U&& v) {
 				using namespace std;
 				auto from = cbegin(v);
-				for (; from != (--cend(v)); ++from)
+				auto to = (cend(v)-1);
+				for (; from != to; ++from)
 					print_ip_ns::print_ip(out, *from) << '.';
 				return print_ip_ns::print_ip(out, *from);
 			}
