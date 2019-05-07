@@ -1,5 +1,6 @@
 #ifndef PRINT_IP_PROJECT_VISIT_TUPLE_HPP
 #include <tuple>
+#include <functional>
 #define PRINT_IP_PROJECT_VISIT_TUPLE_HPP
 
 
