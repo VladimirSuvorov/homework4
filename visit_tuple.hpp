@@ -14,9 +14,9 @@ namespace {
 			base::template visit<index>(std::forward<Callable>(visitor), std::forward<Tuple>(t));
 		}
 	protected:
-		template<size_t index, typename Callable, typename Tuple>
+		template<size_t index_, typename Callable, typename Tuple>
 		constexpr static void visit(Callable&& visitor, Tuple&& t) {
-			base::template visit<index>(std::forward<Callable>(visitor), std::forward<Tuple>(t));
+			base::template visit<index_>(std::forward<Callable>(visitor), std::forward<Tuple>(t));
 		}
 	};
 	template<>
